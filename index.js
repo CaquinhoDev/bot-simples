@@ -19,7 +19,7 @@ async function connectToWhatsApp() {
     printQRInTerminal: !pairingCode,
     qrTimeout: 180000,
     logger: pino({ level: "silent" }),
-    browser: ["Chrome (Linux)", "", ""], // If you change this then the pairing code will not work!!!
+    browser: ["Chrome (Linux)", "", ""], // não mexa!
     msgRetryCounterCache,
     connectTimeoutMs: 0,
     keepAliveIntervalMs: 10000,
@@ -93,7 +93,7 @@ async function connectToWhatsApp() {
     // for debug
     console.log(JSON.stringify(message, undefined, 2));
 
-    // Comando de envio de botões
+    // comandos
 
     // Comando Ping
     if (text == "/ping") {
@@ -125,5 +125,5 @@ async function connectToWhatsApp() {
   sock.ev.on("creds.update", saveCreds);
 }
 
-// Run in main file
+// Rodar o bot
 connectToWhatsApp();
